@@ -1,0 +1,21 @@
+[OSEv3:children]
+masters
+nodes
+
+[masters]
+ggorigin.com openshift_schedulable=true
+
+[nodes]
+ggorigin.com openshift_node_labels="{'region': 'infra', 'zone': 'default'}"
+
+[OSEv3:vars]
+ansible_ssh_user=root
+enable_excluders=false
+enable_docker_excluder=false
+containerized=true
+deployment_type=origin
+openshift_release=v1.4
+openshift_image_tag=v1.4.0
+openshift_public_hostname=ggorigin.com
+openshift_hosted_metrics_deploy=false
+openshift_disable_check=disk_availability,docker_storage,memory_availability,docker_image_availability
